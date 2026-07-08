@@ -15,17 +15,10 @@ interface PropOptions<T = any, D = T> {
   validator?(value: unknown, props: Data): boolean
 }
 
-export const isFunction = (val: unknown): val is Function => typeof val === 'function'
+export const isFunction = (val: unknown): val is Function => { throw new Error("STUB"); }
 
 export const isArray = (val: unknown): val is Array<any> => Array.isArray(val)
 
 export function isPropOptions(value: any): value is PropOptions {
-  return (
-    typeof value === 'object' &&
-    (value.type === undefined || typeof value.type === 'function' || value.type === true) &&
-    (value.required === undefined || typeof value.required === 'boolean') &&
-    (value.default === undefined ||
-      typeof value.default === 'function' ||
-      (value.type !== true && typeof value.default === value.type.name.toLowerCase()))
-  )
+    throw new Error("STUB");
 }
